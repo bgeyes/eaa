@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-auto-reviews-model',
+  selector: 'auto-reviews-model',
   templateUrl: './auto-reviews-model.component.html',
   styleUrls: ['./auto-reviews-model.component.css']
 })
 export class AutoReviewsModelComponent implements OnInit {
+  
+  private routeSub: any;
+  slug: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.routeSub = this.route. params.subscribe(params => {
+      //console.log(params)
+      this.slug = params['slug'];
+    })
+  }
+
+  ngOnDestroy() {
+    this.routeSub.unsubscribe()
   }
 
 }

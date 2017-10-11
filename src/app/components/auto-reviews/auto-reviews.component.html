@@ -4,6 +4,6 @@
 
 <ul>
   <li *ngFor="let item of modelsList">
-    <a routerLink='/reviews/:item.slug'>{{ item.model }}</a>
+    <a routerLink='/reviews/{{ item.slug }}'>{{ item.model }}</a>
   </li>
 </ul>

@@ -1,3 +1,4 @@
+import { ReviewsService } from './../../services/reviews.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,21 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auto-reviews.component.css']
 })
 export class AutoReviewsComponent implements OnInit {
-  modelsList = [
-    {
-      model: "Mercedes",
-      slug: "merc"
-    },
-    {
-      model: "BMW",
-      slug: "bmw"
-    },
-    {
-      model: "Audi",
-      slug: "audi"
-    }
-  ]
-  constructor() { }
+  modelsList;
+  constructor(service: ReviewsService) {
+    this.modelsList = service.getModels();
+  }
 
   ngOnInit() {
   }

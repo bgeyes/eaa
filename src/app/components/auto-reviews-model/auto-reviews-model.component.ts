@@ -1,3 +1,4 @@
+import { ReviewsService } from './../../services/reviews.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,14 +11,18 @@ export class AutoReviewsModelComponent implements OnInit, OnDestroy {
   
   private routeSub: any;
   slug: string;
+  make: string;
+  models;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, service: ReviewsService) {
+    //this.models = service.getModel(this.slug);
+   }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
       //console.log(params)
       this.slug = params['slug'];
-    })
+    });
   }
 
   ngOnDestroy() {

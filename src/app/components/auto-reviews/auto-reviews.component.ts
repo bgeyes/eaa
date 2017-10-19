@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auto-reviews.component.css']
 })
 export class AutoReviewsComponent implements OnInit {
-  modelsList;
+  makeList;
+  //modelsList;
+  //selectedMake;
+
   constructor(service: ReviewsService) {
-    this.modelsList = service.getModels();
+     this.makeList = service.getMake();
   }
 
   ngOnInit() {
+
   }
 
 }

@@ -3,7 +3,23 @@
 </p>
 
 <ul>
-  <li *ngFor="let item of modelsList">
+  <li *ngFor="let item of makeList">
     <a routerLink='/reviews/{{ item.slug }}'>{{ item.model }}</a>
   </li>
 </ul>
+
+<!-- <div class="form-group">
+   <label for="makeList">Make List</label>
+   <select [(ngModel)]="selectedMake" (click)="onSelect(selectedMake)" name="makeList" id="makeList" class="form-control">
+    <option value=""></option>
+    <option *ngFor='let make of makeList' [value]='make.id'>{{ make.model }}</option>
+   </select>
+</div>
+
+<div class="form-group">
+  <label for="modelsList">Model List</label>
+  <select ngModel name="modelsList" id="modelsList" class="form-control">
+    <option value=""></option>
+    <option *ngFor='let model of modelsList' [value]='model.id'>{{ model.model }}</option>
+  </select>
+</div> -->

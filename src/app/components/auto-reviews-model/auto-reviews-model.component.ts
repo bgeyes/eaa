@@ -12,10 +12,12 @@ export class AutoReviewsModelComponent implements OnInit, OnDestroy {
   private routeSub: any;
   slug: string;
   make: string;
-  models;
+  models: any;
 
   constructor(private route: ActivatedRoute, service: ReviewsService) {
-    //this.models = service.getModel(this.slug);
+    console.log(this.slug);
+    this.models = service.getModel(this.slug);
+    console.log(this.models);
    }
 
   ngOnInit() {

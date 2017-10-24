@@ -23,7 +23,7 @@ export class ReviewsService {
     ]
   };
 
-  /* getModel(model) {
+  getModel(model) {
     if (model == 'merc') {
       return [
         {
@@ -72,7 +72,7 @@ export class ReviewsService {
         }
       ]
     }
-  }; */
+  };
 
   constructor() { }
 

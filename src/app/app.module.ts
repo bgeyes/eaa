@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { ReviewsService } from './services/reviews.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
@@ -12,6 +13,11 @@ import { AppComponent } from './app.component';
 import { AutoReviewsComponent } from './components/auto-reviews/auto-reviews.component';
 import { AutoReviewsModelComponent } from './components/auto-reviews-model/auto-reviews-model.component';
 import { HomeComponent } from './components/home/home.component';
+import { UserComponent } from './components/users/user/user.component';
+import { UserDetailsComponent } from './components/users/user-details/user-details.component';
+import { UserListComponent } from './components/users/user-list/user-list.component';
+import { UserNewComponent } from './components/users/user-new/user-new.component';
+import { UserEditComponent } from './components/users/user-edit/user-edit.component';
 
 const appRoutes: Routes = [
   {
@@ -34,7 +40,12 @@ const appRoutes: Routes = [
     AppComponent,
     AutoReviewsComponent,
     AutoReviewsModelComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent,
+    UserDetailsComponent,
+    UserListComponent,
+    UserNewComponent,
+    UserEditComponent
   ],
   imports: [
     BsDropdownModule.forRoot(),
@@ -46,7 +57,8 @@ const appRoutes: Routes = [
     )
   ],
   providers: [
-    ReviewsService
+    ReviewsService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

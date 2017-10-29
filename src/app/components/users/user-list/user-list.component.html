@@ -3,8 +3,8 @@
   <ul>
     <li *ngFor='let user of users'>
         {{ user._id }} - {{ user.first_name }} - {{ user.last_name }} - {{ user.email }}
-        <button class="btn btn-danger" (click)="destroy(user)">Delete</button>
         <button class="btn btn-default" (click)="user.editable = !user.editable">Edit</button>
+        <button class="btn btn-danger" (click)="destroy(user)">Delete</button>
         <user-edit [user]="user" (updateUserEvent)="update($event)" *ngIf="user.editable"></user-edit>
     </li>
   </ul>

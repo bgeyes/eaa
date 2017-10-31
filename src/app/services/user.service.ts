@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class UserService {
+export class UsersService {
 
   constructor(private _http: Http) { }
 

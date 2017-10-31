@@ -1,4 +1,4 @@
-import { UserService } from './../../../services/user.service';
+import { UsersService } from './../../../services/user.service';
 import { User } from './../user';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
     new User(3, "first", "last", "email")
   ];
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UsersService) { }
 
   ngOnInit() {
   /*   this.getUsers(); */

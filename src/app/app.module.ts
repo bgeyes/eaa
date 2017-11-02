@@ -45,21 +45,28 @@ const appRoutes: Routes = [
   },
 
   // otherwise redirect to home
-  { 
+  /* { 
       path: '**', 
       redirectTo: '' 
-  },
-  {
+  }, */
+  /* {
       path: "",
       component: HomeComponent
+  }, */
+  {
+      path: "users",
+      component: UserComponent,
+      canActivate: [AuthGuard]
   },
   {
       path: "reviews",
-      component: AutoReviewsComponent
+      component: AutoReviewsComponent,
+      canActivate: [AuthGuard]
   },
   {
       path: "reviews/:slug",
-      component: AutoReviewsModelComponent
+      component: AutoReviewsModelComponent,
+      canActivate: [AuthGuard]
   }
 
 ]

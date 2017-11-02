@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  addUser: Boolean = false;
   users: Array<User> = [
     new User(1, "first", "last", "email"),
     new User(2, "first", "last", "email"),

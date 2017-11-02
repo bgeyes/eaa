@@ -1,7 +1,8 @@
 <h1>UserComponent</h1>
-{{ users | json }}
+<!-- <div>{{ users | json }}</div> -->
 
-<user-new (createNewUserEvent)="create($event)" ></user-new>
+<button class="btn btn-primary" (click)="addUser = !addUser">Add User</button>
+<user-new (createNewUserEvent)="create($event)" *ngIf="addUser"></user-new>
 <user-list 
     [users]="users" 
     (destroyUserEvent)="destroy($event)"
